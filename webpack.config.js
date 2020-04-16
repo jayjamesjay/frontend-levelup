@@ -1,44 +1,57 @@
-const HtmlWebPackPlugin = require("html-webpack-plugin");
-const path = require('path');
+const path = require('path')
+const HtmlWebPackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-  entry: {
-    main: "./src/index.js",
-  },
+  entry: './src/index.js',
   output: {
-    path: path.resolve(__dirname, './docs'),
-    filename: '[name].js'
+    filename: 'index.js',
+    path: path.resolve(__dirname, 'dist')
   },
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.(js|ts)x?$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader",
+          loader: 'babel-loader',
           options: {
-            presets: ["@babel/preset-env"],
-          },
-        },
+            presets: ['@babel/preset-env']
+          }
+        }
       },
       {
         test: /\.s[ac]ss$/i,
-        use: ["style-loader", "css-loader", "sass-loader"],
+        use: [
+          'style-loader',
+          'css-loader',
+          'sass-loader',
+        ],
       },
       {
-        test: /\.(png|jpe?g|gif)$/i,
+        test: /\.html$/,
         use: [
           {
-            loader: "file-loader",
+            loader: 'html-loader'
+          }
+        ]
+      },
+      {
+        test: /\.(jpe?g|png|svg|gif|ico|webp|eot|ttf|woff|woff2|pdf|mp4|webm)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              outputPath: 'assets',
+            },
           },
         ],
       },
-    ],
+    ]
   },
   plugins: [
     new HtmlWebPackPlugin({
-      template: "./src/index.html",
-      filename: "./index.html"
-    }),
-  ],
-};
+      template: './src/index.html',
+      filename: './index.html'
+    })
+  ]
+}

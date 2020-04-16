@@ -1,4 +1,4 @@
-import script from "./script.js";
-import styles from "./styles/style.sass";
+import './styles/style.sass'
+import script from './script'
 
-script();
+script()
