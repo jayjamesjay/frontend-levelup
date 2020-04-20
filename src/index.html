@@ -1,14 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <section>
-    <h1>Hello World!</h1>
-    <img src="./assets/daftcode.png" />
-  </section>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zonex</title>
+  </head>
+  <body>
+    <header class="header header--site">
+      <nav class="nav">
+        <ul class="menu">
+          <li class="menu__item"><a href="">Home</a></li>
+          <li class="menu__item"><a href="">Shop</a></li>
+          <li class="menu__item"><a href="">Elements</a></li>
+          <li class="menu__item"><a href="">Blog</a></li>
+          <li class="menu__item"><a href="">Page</a></li>
+        </ul>
+      </nav>
+      <div class="header__logo">
+        <h1 class="h1">Zonex</h1>
+      </div>
+      <div class="controls">
+        <button class="btn">
+          <img class="btn__icon" src="" alt="Go to User Settings" />
+        </button>
+        <button class="btn">
+          <img class="btn__icon" src="" alt="See shopping bag" />
+        </button>
+        <button class="btn">
+          <img class="btn__icon" src="" alt="3 items in bag" />
+        </button>
+      </div>
+    </header>
+    <main class="main">
+      <section class="section section--start">
+        <div class="slider"></div>
+      </section>
+      <section class="section section--new">
+        <h2 class="h2">New Arrivals</h2>
+        <div class="content">
+          <article class="item">
+            <img class="item__img" src="" alt="" />
+            <h3 class="item__name"></h3>
+            <p class="item__price"></p>
+            <p class="item__tags"></p>
+          </article>
+          <!-- 8 items-->
+        </div>
+        <footer>
+          <a href="/">All Products</a>
+        </footer>
+      </section>
+      <section class="section"></section>
+      <section class="section section--campaigns">
+        <section class="item">
+          <h3 class="item__name"></h3>
+          <a href="" class="item__link">Shop now</a>
+        </section>
+        <!-- 4 items in gird-->
+      </section>
+      <section class="section section--newsletter">
+        <h2 class="h2"></h2>
+        <p>Join our list and get 15% off your first purchase!</p>
+        <form class="form" action="submit">
+          <input id="mail" type="email" />
+          <label for="mail">Email Address</label>
+          <button class="btn">Submit</button>
+        </form>
+      </section>
+    </main>
+    <footer class="footer">
+      <section class="section">
+        <div class="socials">
+          <button class="btn"><img class="btn__icon" src="" alt="" /></button>
+          <button class="btn"><img class="btn__icon" src="" alt="" /></button>
+          <button class="btn"><img class="btn__icon" src="" alt="" /></button>
+          <button class="btn"><img class="btn__icon" src="" alt="" /></button>
+        </div>
+      </section>
+      <section class="section">
+        <p class="p">&copy; Zonex All right reserved.</p>
+        <img src="/" alt="Payment methods logos" />
+      </section>
+    </footer>
+  </body>
 </html>
