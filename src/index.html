@@ -27,23 +27,23 @@
         <img src="./assets/-e-logo zonex.svg" alt="" />
       </div>
       <div class="controls">
-        <button class="btn">
+        <button class="button">
           <img
-            class="btn__icon"
+            class="button__icon"
             src="./assets/-e-kz-user.svg"
             alt="Go to User Settings"
           />
         </button>
-        <button class="btn">
+        <button class="button">
           <img
-            class="btn__icon"
+            class="button__icon"
             src="./assets/-e-kz-bag.svg"
             alt="See shopping bag"
           />
         </button>
-        <button class="btn">
+        <button class="button">
           <img
-            class="btn__icon"
+            class="button__icon"
             src="./assets/kz-number-one.svg"
             alt="3 items in bag"
           />
@@ -55,9 +55,9 @@
         <div class="slider"></div>
       </section>
       <section class="section section--new">
-        <h2 class="h2">New Arrivals</h2>
-        <div class="content row row-cols-xs-1 row-cols-sm-2 row-cols-md-4">
-          <article class="item">
+        <h2 class="section__title">New Arrivals</h2>
+        <div class="content row row-cols-md-4">
+          <article class="item col-6">
             <img
               class="item__img w-100"
               src="http://placekitten.com/309/309"
@@ -67,7 +67,7 @@
             <p class="item__price">$220.00</p>
             <p class="item__tags">New</p>
           </article>
-          <article class="item">
+          <article class="item col-6">
             <img
               class="item__img w-100"
               src="http://placekitten.com/309/309"
@@ -77,7 +77,7 @@
             <p class="item__price">$290.00</p>
             <p class="item__tags"></p>
           </article>
-          <article class="item">
+          <article class="item col-6">
             <img
               class="item__img w-100"
               src="http://placekitten.com/309/309"
@@ -87,7 +87,7 @@
             <p class="item__price">Add to cart</p>
             <p class="item__tags"></p>
           </article>
-          <article class="item">
+          <article class="item col-6">
             <img
               class="item__img w-100"
               src="http://placekitten.com/309/309"
@@ -97,7 +97,7 @@
             <p class="item__price">$80.00 - $125.00</p>
             <p class="item__tags">Bestseller</p>
           </article>
-          <article class="item">
+          <article class="item col-6">
             <img
               class="item__img w-100"
               src="http://placekitten.com/309/309"
@@ -107,7 +107,7 @@
             <p class="item__price">$59.50</p>
             <p class="item__tags">Bestseller</p>
           </article>
-          <article class="item">
+          <article class="item col-6">
             <img
               class="item__img w-100"
               src="http://placekitten.com/309/309"
@@ -119,7 +119,7 @@
             </p>
             <p class="item__tags">Hot</p>
           </article>
-          <article class="item">
+          <article class="item col-6">
             <img
               class="item__img w-100"
               src="http://placekitten.com/309/309"
@@ -129,7 +129,7 @@
             <p class="item__price">$49.50</p>
             <p class="item__tags">Top rate</p>
           </article>
-          <article class="item">
+          <article class="item col-6">
             <img
               class="item__img w-100"
               src="http://placekitten.com/309/309"
@@ -144,94 +144,118 @@
           <a href="/">All Products</a>
         </footer>
       </section>
-      <section class="section"></section>
       <section class="section section--campaigns">
-        <section class="item item--dress">
-          <h3 class="item__name">Sleeve denim mini dress</h3>
-          <a href="" class="item__link">Shop now</a>
+        <section class="grid-item grid-item--dress">
+          <h3 class="grid-item__name">Sleeve denim mini dress</h3>
+          <a href="/" class="grid-item__link">Shop now</a>
+          <img
+            class="item__img w-100"
+            src="http://placekitten.com/547/630"
+            alt=""
+          />
         </section>
-        <section class="item item--school">
-          <h3 class="item__name">Back to school</h3>
-          <a href="" class="item__link">Shop now</a>
+        <section class="grid-item grid-item--school">
+          <h3 class="grid-item__name">Back to school</h3>
+          <a href="/" class="grid-item__link">Shop now</a>
+          <img
+            class="item__img w-100"
+            src="http://placekitten.com/380/310"
+            alt=""
+          />
         </section>
-        <section class="item item--jewelry">
-          <h3 class="item__name">Jewelry for night</h3>
-          <a href="" class="item__link">Shop now</a>
+        <section class="grid-item grid-item--jewelry">
+          <h3 class="grid-item__name">Jewelry for night</h3>
+          <a href="/" class="grid-item__link">Shop now</a>
+          <img
+            class="item__img w-100"
+            src="http://placekitten.com/380/310"
+            alt=""
+          />
         </section>
-        <section class="item item--sunglasses">
-          <h3 class="item__name">Sunglasses for you</h3>
-          <a href="" class="item__link">Shop now</a>
+        <section class="grid-item grid-item--sunglasses">
+          <h3 class="grid-item__name">Sunglasses for you</h3>
+          <a href="/" class="grid-item__link">Shop now</a>
+          <img
+            class="item__img w-100"
+            src="http://placekitten.com/769/550"
+            alt=""
+          />
         </section>
       </section>
       <section class="section section--newsletter">
-        <h2 class="h2"></h2>
+        <h2 class="section__title">Newsletter</h2>
         <p>Join our list and get 15% off your first purchase!</p>
         <form class="form" action="submit">
           <input id="mail" type="email" />
           <label for="mail">Email Address</label>
-          <button class="btn">Submit</button>
+          <button class="button">Subscribe</button>
+          <p>*Don't worry we don't spam.</p>
         </form>
       </section>
     </main>
-    <footer class="footer">
+    <footer class="footer container-fluid">
       <section class="footer__section">
         <div class="socials">
-          <a class="socials__link">
+          <a class="socials__link" href="/">
             <img
-              class="btn__icon"
+              class="socials__img"
               src="./assets/-e-kz-twitter.svg"
               alt="Twitter"
             />
           </a>
-          <a class="socials__link">
+          <a class="socials__link" href="/">
             <img
-              class="btn__icon"
+              class="socials__img"
               src="./assets/-e-kz-facebook.svg"
               alt="Facebook"
             />
           </a>
-          <a class="socials__link">
+          <a class="socials__link" href="/">
             <img
-              class="btn__icon"
+              class="socials__img"
               src="./assets/-e-kz-instagram.svg"
               alt="Instagram"
             />
           </a>
-          <a class="socials__link">
+          <a class="socials__link" href="/">
             <img
-              class="btn__icon"
+              class="socials__img"
               src="./assets/-e-kz-pinterest.svg"
               alt="Printerest"
             />
           </a>
         </div>
-        <div class="footer__section">
-          <a href="/">Returns Policy</a>
-          <a href="/">Track Your Order</a>
-          <a href="/">Shipping & Delivery</a>
+        <div class="footer__row footer__row--links">
+          <a class="footer__link" href="/">Returns Policy</a>
+          <a class="footer__link" href="/">Track Your Order</a>
+          <a class="footer__link" href="/">Shipping & Delivery</a>
         </div>
-        <div class="footer__section">
+        <form class="footer__row footer__row--form">
           <div>
-            <label for="currency">Currency</label>
-            <select id="currency" name="currencies">
+            <label class="footer__label" for="currency">Currency</label>
+            <select class="footer__select" id="currency" name="currencies">
               <option value="usd">USD</option>
               <option value="eur">EUR</option>
               <option value="pln">PLN</option>
             </select>
           </div>
           <div>
-            <label for="lang">Language</label>
-            <select id="lang" name="languages">
+            <label class="footer__label" for="lang">Language</label>
+            <select class="footer__select" id="lang" name="languages">
               <option value="en">English</option>
               <option value="de">Deutsch</option>
               <option value="pl">Polski</option>
             </select>
           </div>
-        </div>
+        </form>
       </section>
       <section class="footer__section">
-        <p class="p">&copy; Zonex All right reserved.</p>
-        <img class="footer__img w-100" src="./assets/-e-payment@2x.svg" alt="Payment methods logos" />
+        <p class="footer__p">&copy;Zonex All right reserved.</p>
+        <img
+          class="footer__img w-100"
+          src="./assets/-e-payment@2x.svg"
+          alt="Payment methods logos"
+        />
       </section>
     </footer>
   </body>
