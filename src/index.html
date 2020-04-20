@@ -4,47 +4,141 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Zonex</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
     <header class="header header--site">
       <nav class="nav">
         <ul class="menu">
-          <li class="menu__item"><a href="">Home</a></li>
-          <li class="menu__item"><a href="">Shop</a></li>
-          <li class="menu__item"><a href="">Elements</a></li>
-          <li class="menu__item"><a href="">Blog</a></li>
-          <li class="menu__item"><a href="">Page</a></li>
+          <li class="menu__item"><a href="/">Home</a></li>
+          <li class="menu__item"><a href="/">Shop</a></li>
+          <li class="menu__item"><a href="/">Elements</a></li>
+          <li class="menu__item"><a href="/">Blog</a></li>
+          <li class="menu__item"><a href="/">Page</a></li>
         </ul>
       </nav>
       <div class="header__logo">
-        <h1 class="h1">Zonex</h1>
+        <h1 class="h1 visually-hidden">Zonex</h1>
+        <img src="./assets/-e-logo zonex.svg" alt="" />
       </div>
       <div class="controls">
         <button class="btn">
-          <img class="btn__icon" src="" alt="Go to User Settings" />
+          <img
+            class="btn__icon"
+            src="./assets/-e-kz-user.svg"
+            alt="Go to User Settings"
+          />
         </button>
         <button class="btn">
-          <img class="btn__icon" src="" alt="See shopping bag" />
+          <img
+            class="btn__icon"
+            src="./assets/-e-kz-bag.svg"
+            alt="See shopping bag"
+          />
         </button>
         <button class="btn">
-          <img class="btn__icon" src="" alt="3 items in bag" />
+          <img
+            class="btn__icon"
+            src="./assets/kz-number-one.svg"
+            alt="3 items in bag"
+          />
         </button>
       </div>
     </header>
-    <main class="main">
+    <main class="main container-fluid">
       <section class="section section--start">
         <div class="slider"></div>
       </section>
       <section class="section section--new">
         <h2 class="h2">New Arrivals</h2>
-        <div class="content">
+        <div class="content row row-cols-xs-1 row-cols-sm-2 row-cols-md-4">
           <article class="item">
-            <img class="item__img" src="" alt="" />
-            <h3 class="item__name"></h3>
-            <p class="item__price"></p>
+            <img
+              class="item__img w-100"
+              src="http://placekitten.com/309/309"
+              alt=""
+            />
+            <h3 class="item__name">Eye Mesh Boat Shoes</h3>
+            <p class="item__price">$220.00</p>
+            <p class="item__tags">New</p>
+          </article>
+          <article class="item">
+            <img
+              class="item__img w-100"
+              src="http://placekitten.com/309/309"
+              alt=""
+            />
+            <h3 class="item__name">Azure Tote</h3>
+            <p class="item__price">$290.00</p>
             <p class="item__tags"></p>
           </article>
-          <!-- 8 items-->
+          <article class="item">
+            <img
+              class="item__img w-100"
+              src="http://placekitten.com/309/309"
+              alt=""
+            />
+            <h3 class="item__name">Blue raincoat</h3>
+            <p class="item__price">Add to cart</p>
+            <p class="item__tags"></p>
+          </article>
+          <article class="item">
+            <img
+              class="item__img w-100"
+              src="http://placekitten.com/309/309"
+              alt=""
+            />
+            <h3 class="item__name">Backpack with contrasting buckle</h3>
+            <p class="item__price">$80.00 - $125.00</p>
+            <p class="item__tags">Bestseller</p>
+          </article>
+          <article class="item">
+            <img
+              class="item__img w-100"
+              src="http://placekitten.com/309/309"
+              alt=""
+            />
+            <h3 class="item__name">Shirt in organic cotton classic gingham</h3>
+            <p class="item__price">$59.50</p>
+            <p class="item__tags">Bestseller</p>
+          </article>
+          <article class="item">
+            <img
+              class="item__img w-100"
+              src="http://placekitten.com/309/309"
+              alt=""
+            />
+            <h3 class="item__name">Tailored indigo jumpsuit</h3>
+            <p class="item__price">
+              $128.00 <span class="item__discount">$165.00</span>
+            </p>
+            <p class="item__tags">Hot</p>
+          </article>
+          <article class="item">
+            <img
+              class="item__img w-100"
+              src="http://placekitten.com/309/309"
+              alt=""
+            />
+            <h3 class="item__name">Triple stone drop earrings</h3>
+            <p class="item__price">$49.50</p>
+            <p class="item__tags">Top rate</p>
+          </article>
+          <article class="item">
+            <img
+              class="item__img w-100"
+              src="http://placekitten.com/309/309"
+              alt=""
+            />
+            <h3 class="item__name">Backpack with contrasting buckle</h3>
+            <p class="item__price">$158.00</p>
+            <p class="item__tags">Only a few left</p>
+          </article>
         </div>
         <footer>
           <a href="/">All Products</a>
@@ -52,11 +146,22 @@
       </section>
       <section class="section"></section>
       <section class="section section--campaigns">
-        <section class="item">
-          <h3 class="item__name"></h3>
+        <section class="item item--dress">
+          <h3 class="item__name">Sleeve denim mini dress</h3>
           <a href="" class="item__link">Shop now</a>
         </section>
-        <!-- 4 items in gird-->
+        <section class="item item--school">
+          <h3 class="item__name">Back to school</h3>
+          <a href="" class="item__link">Shop now</a>
+        </section>
+        <section class="item item--jewelry">
+          <h3 class="item__name">Jewelry for night</h3>
+          <a href="" class="item__link">Shop now</a>
+        </section>
+        <section class="item item--sunglasses">
+          <h3 class="item__name">Sunglasses for you</h3>
+          <a href="" class="item__link">Shop now</a>
+        </section>
       </section>
       <section class="section section--newsletter">
         <h2 class="h2"></h2>
@@ -69,17 +174,64 @@
       </section>
     </main>
     <footer class="footer">
-      <section class="section">
+      <section class="footer__section">
         <div class="socials">
-          <button class="btn"><img class="btn__icon" src="" alt="" /></button>
-          <button class="btn"><img class="btn__icon" src="" alt="" /></button>
-          <button class="btn"><img class="btn__icon" src="" alt="" /></button>
-          <button class="btn"><img class="btn__icon" src="" alt="" /></button>
+          <a class="socials__link">
+            <img
+              class="btn__icon"
+              src="./assets/-e-kz-twitter.svg"
+              alt="Twitter"
+            />
+          </a>
+          <a class="socials__link">
+            <img
+              class="btn__icon"
+              src="./assets/-e-kz-facebook.svg"
+              alt="Facebook"
+            />
+          </a>
+          <a class="socials__link">
+            <img
+              class="btn__icon"
+              src="./assets/-e-kz-instagram.svg"
+              alt="Instagram"
+            />
+          </a>
+          <a class="socials__link">
+            <img
+              class="btn__icon"
+              src="./assets/-e-kz-pinterest.svg"
+              alt="Printerest"
+            />
+          </a>
+        </div>
+        <div class="footer__section">
+          <a href="/">Returns Policy</a>
+          <a href="/">Track Your Order</a>
+          <a href="/">Shipping & Delivery</a>
+        </div>
+        <div class="footer__section">
+          <div>
+            <label for="currency">Currency</label>
+            <select id="currency" name="currencies">
+              <option value="usd">USD</option>
+              <option value="eur">EUR</option>
+              <option value="pln">PLN</option>
+            </select>
+          </div>
+          <div>
+            <label for="lang">Language</label>
+            <select id="lang" name="languages">
+              <option value="en">English</option>
+              <option value="de">Deutsch</option>
+              <option value="pl">Polski</option>
+            </select>
+          </div>
         </div>
       </section>
-      <section class="section">
+      <section class="footer__section">
         <p class="p">&copy; Zonex All right reserved.</p>
-        <img src="/" alt="Payment methods logos" />
+        <img class="footer__img w-100" src="./assets/-e-payment@2x.svg" alt="Payment methods logos" />
       </section>
     </footer>
   </body>
