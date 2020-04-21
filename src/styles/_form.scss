@@ -1,0 +1,21 @@
+.form {
+  &__group {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid $border-color-2;
+  }
+
+  &__input {
+    outline: none;
+    border: none;
+    padding: 0.5rem 0;
+  }
+
+  &__p {
+    text-align: left;
+    padding: 1rem 0;
+    margin: 0;
+  }
+}

@@ -1,4 +1,17 @@
 .button {
   background: transparent;
   border: none;
+  padding: 0;
+
+  &__icon {
+    padding: 0 10px;
+  }
+
+  &--start {
+    display: none;
+  }
+
+  &--form {
+    font-weight: 600;
+  }
 }

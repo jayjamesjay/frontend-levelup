@@ -12,7 +12,7 @@
     />
   </head>
   <body>
-    <header class="header header--site">
+    <header class="header">
       <nav class="nav">
         <ul class="menu">
           <li class="menu__item"><a href="/">Home</a></li>
@@ -22,9 +22,21 @@
           <li class="menu__item"><a href="/">Page</a></li>
         </ul>
       </nav>
-      <div class="header__logo">
-        <h1 class="h1 visually-hidden">Zonex</h1>
-        <img src="./assets/-e-logo zonex.svg" alt="" />
+      <div class="controls">
+        <button class="button">
+          <img
+            class="button__icon"
+            src="./assets/-e-canvas menu.svg"
+            alt="Open menu"
+          />
+        </button>
+        <h1>
+          <img
+            class="button__icon"
+            src="./assets/-e-logo zonex.svg"
+            alt="Zonex"
+          />
+        </h1>
       </div>
       <div class="controls">
         <button class="button">
@@ -50,12 +62,85 @@
         </button>
       </div>
     </header>
-    <main class="main container-fluid">
+    <main class="main">
       <section class="section section--start">
-        <div class="slider"></div>
+        <div class="overlay"></div>
+        <div class="slider">
+          <button class="button button--start">
+            <img
+              class="button__icon"
+              src="./assets/left-arrow@3x.png"
+              alt="Previous item"
+            />
+          </button>
+          <div class="slider__content">
+            <article class="slider-item">
+              <img
+                class="slider-item__img"
+                src="http://placekitten.com/268/338"
+                alt=""
+              />
+              <div class="slider-item__info">
+                <h3 class="slider-item__name">Eye Mesh Boat Shoes</h3>
+                <p class="slider-item__price">$220.00</p>
+              </div>
+            </article>
+            <article class="slider-item">
+              <img
+                class="slider-item__img"
+                src="http://placekitten.com/268/338"
+                alt=""
+              />
+              <div class="slider-item__info">
+                <h3 class="slider-item__name">Eye Mesh Boat Shoes</h3>
+                <p class="slider-item__price">$220.00</p>
+              </div>
+            </article>
+            <article class="slider-item">
+              <img
+                class="slider-item__img"
+                src="http://placekitten.com/268/338"
+                alt=""
+              />
+              <div class="slider-item__info">
+                <h3 class="slider-item__name">Eye Mesh Boat Shoes</h3>
+                <p class="slider-item__price">$220.00</p>
+              </div>
+            </article>
+            <article class="slider-item">
+              <img
+                class="slider-item__img"
+                src="http://placekitten.com/268/338"
+                alt=""
+              />
+              <div class="slider-item__info">
+                <h3 class="slider-item__name">Eye Mesh Boat Shoes</h3>
+                <p class="slider-item__price">$220.00</p>
+              </div>
+            </article>
+            <article class="slider-item">
+              <img
+                class="slider-item__img"
+                src="http://placekitten.com/268/338"
+                alt=""
+              />
+              <div class="slider-item__info">
+                <h3 class="slider-item__name">Eye Mesh Boat Shoes</h3>
+                <p class="slider-item__price">$220.00</p>
+              </div>
+            </article>
+          </div>
+          <button class="button button--start">
+            <img
+              class="button__icon"
+              src="./assets/left-arrow@3x.png"
+              alt="Next item"
+            />
+          </button>
+        </div>
       </section>
-      <section class="section section--new">
-        <h2 class="section__title">New Arrivals</h2>
+      <section class="section section--new container-fluid">
+        <h2 class="section__title section__title--new">New Arrivals</h2>
         <div class="content row row-cols-md-4">
           <article class="item col-6">
             <img
@@ -140,14 +225,20 @@
             <p class="item__tags">Only a few left</p>
           </article>
         </div>
-        <footer>
-          <a href="/">All Products</a>
+        <footer class="section__footer">
+          <a class="section__link" href="/">View All Products</a>
         </footer>
       </section>
-      <section class="section section--campaigns">
+      <section class="section section--campaigns container-fluid">
         <section class="grid-item grid-item--dress">
-          <h3 class="grid-item__name">Sleeve denim mini dress</h3>
-          <a href="/" class="grid-item__link">Shop now</a>
+          <div class="grid-item__info">
+            <h3 class="grid-item__name">
+              Sleeve denim mini dress
+            </h3>
+            <a href="/" class="grid-item__link grid-item__link--line"
+              >Shop now</a
+            >
+          </div>
           <img
             class="item__img w-100"
             src="http://placekitten.com/547/630"
@@ -155,8 +246,10 @@
           />
         </section>
         <section class="grid-item grid-item--school">
-          <h3 class="grid-item__name">Back to school</h3>
-          <a href="/" class="grid-item__link">Shop now</a>
+          <div class="grid-item__info">
+            <h3 class="grid-item__name">Back to school</h3>
+            <a href="/" class="grid-item__link">Shop now</a>
+          </div>
           <img
             class="item__img w-100"
             src="http://placekitten.com/380/310"
@@ -164,8 +257,10 @@
           />
         </section>
         <section class="grid-item grid-item--jewelry">
-          <h3 class="grid-item__name">Jewelry for night</h3>
-          <a href="/" class="grid-item__link">Shop now</a>
+          <div class="grid-item__info">
+            <h3 class="grid-item__name">Jewelry for night</h3>
+            <a href="/" class="grid-item__link">Shop now</a>
+          </div>
           <img
             class="item__img w-100"
             src="http://placekitten.com/380/310"
@@ -173,8 +268,10 @@
           />
         </section>
         <section class="grid-item grid-item--sunglasses">
-          <h3 class="grid-item__name">Sunglasses for you</h3>
-          <a href="/" class="grid-item__link">Shop now</a>
+          <div class="grid-item__info">
+            <h3 class="grid-item__name">Sunglasses for you</h3>
+            <a href="/" class="grid-item__link">Shop now</a>
+          </div>
           <img
             class="item__img w-100"
             src="http://placekitten.com/769/550"
@@ -182,14 +279,21 @@
           />
         </section>
       </section>
-      <section class="section section--newsletter">
-        <h2 class="section__title">Newsletter</h2>
+      <section class="section section--newsletter container-fluid">
+        <h2 class="section__title section__title--newsletter">Newsletter</h2>
         <p>Join our list and get 15% off your first purchase!</p>
         <form class="form" action="submit">
-          <input id="mail" type="email" />
-          <label for="mail">Email Address</label>
-          <button class="button">Subscribe</button>
-          <p>*Don't worry we don't spam.</p>
+          <div class="form__group">
+            <input
+              class="form__input"
+              id="mail"
+              type="email"
+              placeholder="Email Address"
+            />
+            <label class="visually-hidden" for="mail">Email Address</label>
+            <button class="button button--form">Subscribe</button>
+          </div>
+          <p class="form__p">*Don't worry we don't spam.</p>
         </form>
       </section>
     </main>
@@ -252,7 +356,7 @@
       <section class="footer__section">
         <p class="footer__p">&copy;Zonex All right reserved.</p>
         <img
-          class="footer__img w-100"
+          class="footer__img"
           src="./assets/-e-payment@2x.svg"
           alt="Payment methods logos"
         />

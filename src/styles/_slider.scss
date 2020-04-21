@@ -1,0 +1,31 @@
+.slider {
+  @extend %flex-row;
+
+  &__content {
+    padding: 50px 0;
+    background: $bg-color-1;
+    display: flex;
+    flex-flow: row nowrap;
+    overflow: hidden;
+  }
+
+  &-item {
+    padding: 0 15px;
+    position: relative;
+
+    &__info {
+      background: $bg-color-2;
+      padding: 1rem;
+    }
+
+    &__price {
+      font-weight: bold;
+    }
+
+    &__name,
+    &__price {
+      font-size: $font-size-1;
+      margin: 0;
+    }
+  }
+}

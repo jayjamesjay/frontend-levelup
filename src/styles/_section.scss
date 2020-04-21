@@ -1,5 +1,47 @@
 .section {
+  font-size: $font-size-1;
+
   &__title {
+    font-size: $font-size-2;
+    text-align: center;
+
+    &--new {
+      margin: 3.75rem 0;
+    }
+
+    &--newsletter {
+      margin: 2.4rem 0;
+    }
+  }
+
+  &__link {
+    display: block;
+    color: $font-color;
+    padding: 18px 30px;
+    border: 2px solid $border-color-2;
+
+    &:hover {
+      color: $font-color;
+    }
+  }
+
+  &__footer {
+    @extend %flex-row;
+    justify-content: center;
+    margin: 20px 0 50px 0;
+  }
+
+  &--new {
+    padding: 0 22.5px;
+  }
+
+  &--start {
+    margin-top: -3.5rem;
+    width: 100%;
+    min-height: 63vh;
+  }
+
+  &--newsletter {
     text-align: center;
   }
 }

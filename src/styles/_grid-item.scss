@@ -1,4 +1,32 @@
 .grid-item {
   width: 100%;
   height: auto;
+  position: relative;
+  margin: 10px 0;
+
+  &__info {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+  }
+
+  &__name {
+    font-size: $font-size-2;
+    font-weight: 600;
+  }
+
+  &__link {
+    color: $font-color;
+    font-size: $font-size-1;
+    font-weight: 600;
+
+    &--line{
+      border-bottom: 2px solid $border-color-2;
+    }
+
+    &:hover {
+      color: $font-color;
+      text-decoration: none;
+    }
+  }
 }

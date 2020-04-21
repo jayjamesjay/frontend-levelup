@@ -1,0 +1,18 @@
+.item {
+  padding: 1rem 7.5px;
+  font-size: $font-size-1;
+
+  &__name {
+    font-size: $font-size-1;
+  }
+
+  &__price {
+    font-weight: bold;
+  }
+
+  &__name,
+  &__price,
+  &__tags {
+    margin: 0.5rem 0;
+  }
+}
