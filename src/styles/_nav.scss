@@ -5,4 +5,10 @@
   width: 100%;
   height: 0;
   overflow: hidden;
+
+  @media screen and (min-width: 768px){
+    height: auto;
+    width: auto;
+    position: static;
+  }
 }

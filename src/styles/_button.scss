@@ -14,4 +14,10 @@
   &--form {
     font-weight: 600;
   }
+
+  &--menu {
+    @media screen and (min-width: 768px) {
+      display: none;
+    }
+  }
 }

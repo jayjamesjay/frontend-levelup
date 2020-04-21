@@ -1,4 +1,5 @@
 .footer {
+  font-size: $font-size-1;
   margin: 1.25rem 0;
 
   &__section {
@@ -6,11 +7,10 @@
   }
 
   &__img {
-    max-width: 80%;
+    max-width: 20rem;
   }
 
   &__p {
-    font-size: $font-size-1;
     font-weight: bold;
   }
 
@@ -47,6 +47,32 @@
       padding: 0 0 2.2rem 0;
       margin-bottom: 1.3rem;
       border-bottom: 1px solid $border-color;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-flow: column nowrap;
+
+    &__section {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &__row {
+      flex: 0 0 33%;
+
+      &--form {
+        flex: 0 0 20%;
+        padding: 0;
+        border: none;
+      }
+    }
+
+    &__link {
+      padding: 0.5rem;
     }
   }
 }

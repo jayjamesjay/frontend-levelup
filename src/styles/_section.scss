@@ -1,5 +1,6 @@
 .section {
   font-size: $font-size-1;
+  max-width: 1300px;
 
   &__title {
     font-size: $font-size-2;
@@ -39,9 +40,11 @@
     margin-top: -3.5rem;
     width: 100%;
     min-height: 63vh;
+    max-width: none;
   }
 
   &--newsletter {
     text-align: center;
+    max-width: 41rem;
   }
 }
