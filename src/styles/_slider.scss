@@ -14,12 +14,14 @@
   }
 
   &-item {
-    padding: 0 15px;
+    margin: 0 15px;
     position: relative;
 
     &__info {
-      background: $bg-color-2;
-      padding: 1rem;
+      color: $bg-color-2;
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
     }
 
     &__price {

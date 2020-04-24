@@ -6,7 +6,7 @@
   height: 0;
   overflow: hidden;
 
-  @media screen and (min-width: 768px){
+  @media screen and (min-width: $breakpoint-1) {
     height: auto;
     width: auto;
     position: static;

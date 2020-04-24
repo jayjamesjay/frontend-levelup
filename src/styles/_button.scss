@@ -21,7 +21,7 @@
   &--slider {
     display: none;
 
-    @media screen and (min-width: 1200px) {
+    @media screen and (min-width: $breakpoint-2) {
       display: block;
     }
   }
@@ -39,7 +39,7 @@
     border-radius: 0.6rem;
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $breakpoint-1) {
     &--menu {
       display: none;
     }
