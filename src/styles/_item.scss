@@ -6,6 +6,10 @@
     font-size: $font-size-1;
   }
 
+  &__img {
+    @extend %w-100-h;
+  }
+
   &__price {
     font-weight: bold;
   }

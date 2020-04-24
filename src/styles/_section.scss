@@ -1,6 +1,6 @@
 .section {
   font-size: $font-size-1;
-  max-width: 1300px;
+  max-width: 1330px;
 
   &__title {
     font-size: $font-size-2;
@@ -46,5 +46,13 @@
   &--newsletter {
     text-align: center;
     max-width: 41rem;
+  }
+
+  @media screen and (min-width: 768px){
+    &--campaigns {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      grid-template-columns: 1.44fr 1fr 1fr;
+    }
   }
 }
