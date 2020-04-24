@@ -4,19 +4,34 @@
   padding: 0;
 
   &__icon {
-    padding: 0 10px;
+    padding: 10px;
+
+    &--slider {
+      padding: 20px;
+      margin: 10px 25px 10px 10px;
+      border: 2px solid #fff;
+
+      &-right {
+        transform: rotate(180deg);
+        margin: 10px 10px 10px 25px;
+      }
+    }
   }
 
-  &--start {
+  &--slider {
     display: none;
+
+    @media screen and (min-width: 1200px) {
+      display: block;
+    }
   }
 
   &--form {
     font-weight: 600;
   }
 
-  &--menu {
-    @media screen and (min-width: 768px) {
+  @media screen and (min-width: 768px) {
+    &--menu {
       display: none;
     }
   }

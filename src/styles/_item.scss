@@ -1,22 +1,39 @@
 .item {
-  padding: 1rem 7.5px;
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 1rem 0.5rem;
   font-size: $font-size-1;
 
+  &__name,
+  &__price,
+  &__tags {
+    margin: 0.2rem 0;
+  }
+
   &__name {
+    order: 3;
     font-size: $font-size-1;
   }
 
   &__img {
     @extend %w-100-h;
+    order: 1;
   }
 
   &__price {
+    order: 4;
     font-weight: bold;
   }
 
-  &__name,
-  &__price,
+  &__discount {
+    color: $font-color-2;
+    text-decoration: line-through;
+  }
+
   &__tags {
-    margin: 0.5rem 0;
+    margin-top: 0.5rem;
+    order: 2;
+    text-transform: uppercase;
+    font-weight: bold;
   }
 }
