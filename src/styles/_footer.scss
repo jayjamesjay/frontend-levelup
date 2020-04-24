@@ -1,6 +1,6 @@
 .footer {
   font-size: $font-size-1;
-  margin: 1.25rem 0;
+  margin: 1.25rem auto;
 
   &__section {
     padding: 0 5px;
@@ -54,6 +54,7 @@
   @media screen and (min-width: 768px) {
     display: flex;
     flex-flow: column nowrap;
+    max-width: 1330px;
 
     &__section {
       display: flex;
