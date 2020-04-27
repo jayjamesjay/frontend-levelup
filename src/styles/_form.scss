@@ -2,9 +2,7 @@
   font-size: $font-size-1;
 
   &__group {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
+    @extend %flex-row;
     align-items: center;
     border-bottom: 2px solid $border-color-2;
   }

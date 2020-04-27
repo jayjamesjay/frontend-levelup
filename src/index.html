@@ -150,7 +150,7 @@
       </section>
       <section class="section section--new container-fluid">
         <h2 class="section__title section__title--new">New Arrivals</h2>
-        <div class="content row row-cols-md-4">
+        <div class="content row row-cols-md-4" id="all-products">
           <article class="item col-6">
             <img
               class="item__img"
@@ -247,7 +247,7 @@
           </article>
         </div>
         <footer class="section__footer">
-          <a class="section__link" href="/">View All Products</a>
+          <button class="button button--load" id="products-btn">View All Products</button>
         </footer>
       </section>
       <section class="section section--campaigns container-fluid">
@@ -319,6 +319,13 @@
       </section>
     </main>
     <footer class="footer container-fluid">
+      <button class="button button--top button--top-hidden" id="scroll-top">
+        <img
+          class="button__icon button__icon--top"
+          src="./assets/arrow-right.svg"
+          alt="Scroll to top"
+        />
+      </button>
       <section class="footer__section">
         <div class="socials">
           <a class="socials__link" href="/">
@@ -375,7 +382,9 @@
         </form>
       </section>
       <section class="footer__section">
-        <p class="footer__p">&copy;2019 Zonex All right reserved.</p>
+        <p class="footer__p">
+          &copy;<span id="date">2019</span> Zonex All right reserved.
+        </p>
         <img
           class="footer__img"
           src="./assets/-e-payment.svg"

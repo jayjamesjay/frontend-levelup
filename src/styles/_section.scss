@@ -22,17 +22,6 @@
     object-fit: cover;
   }
 
-  &__link {
-    display: block;
-    color: $font-color;
-    padding: 18px 30px;
-    border: 2px solid $border-color-2;
-
-    &:hover {
-      color: $font-color;
-    }
-  }
-
   &__footer {
     @extend %flex-row;
     justify-content: center;

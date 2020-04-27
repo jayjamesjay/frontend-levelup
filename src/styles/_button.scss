@@ -16,6 +16,11 @@
         margin: 10px 10px 10px 25px;
       }
     }
+
+    &--top {
+      padding: 12px;
+      transform: rotate(-90deg);
+    }
   }
 
   &--slider {
@@ -24,6 +29,12 @@
     @media screen and (min-width: $breakpoint-2) {
       display: block;
     }
+  }
+
+  &--load {
+    color: $font-color;
+    padding: 18px 30px;
+    border: 2px solid $border-color-2;
   }
 
   &--form {
@@ -39,9 +50,28 @@
     border-radius: 0.6rem;
   }
 
+  &--top {
+    transition: transform 0.2s ease-in-out;
+    transform: scale(0);
+    position: fixed;
+    top: 50vh;
+    right: 1vw;
+  }
+
   @media screen and (min-width: $breakpoint-1) {
     &--menu {
       display: none;
+    }
+
+    &--top {
+      transform: scale(1);
+      border-radius: 24px;
+      box-shadow: 0px 5px 30px 0 rgba($border-color-2, 0.1);
+      background-color: $bg-color-3;
+    }
+
+    &--top-hidden {
+      transform: scale(0);
     }
   }
 }
