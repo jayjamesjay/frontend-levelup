@@ -41,38 +41,42 @@ const setup = () => {
       }
     };
 
+    const generateProduct = () => {
+      const item = document.createElement("article");
+      item.setAttribute("class", "item col-6");
+
+      const img = document.createElement("img");
+      setAttributes(img, {
+        class: "item__img",
+        src: "http://placekitten.com/309/390",
+        alt: "",
+      });
+
+      const name = document.createElement("h3");
+      name.setAttribute("class", "item__name");
+      name.textContent = "Backpack with contrasting buckle";
+
+      const price = document.createElement("p");
+      price.setAttribute("class", "item__price");
+      price.textContent = "$158.00";
+
+      const tags = document.createElement("p");
+      tags.setAttribute("class", "item__tags");
+
+      const imgTag = document.createElement("img");
+      setAttributes(imgTag, { src: "./assets/-e-kz-few.svg", alt: "" });
+
+      tags.append(imgTag, "Only a few left");
+      item.append(img, name, price, tags);
+
+      return item;
+    };
+
     const viewMoreProducts = () => {
       const fragment = document.createDocumentFragment();
 
       for (let i = 0; i < 4; i++) {
-        const item = document.createElement("article");
-        item.setAttribute("class", "item col-6");
-
-        const img = document.createElement("img");
-        setAttributes(img, {
-          class: "item__img",
-          src: "http://placekitten.com/309/390",
-          alt: "",
-        });
-
-        const name = document.createElement("h3");
-        name.setAttribute("class", "item__name");
-        name.textContent = "Backpack with contrasting buckle";
-
-        const price = document.createElement("p");
-        price.setAttribute("class", "item__price");
-        price.textContent = "$158.00";
-
-        const tags = document.createElement("p");
-        tags.setAttribute("class", "item__tags");
-
-        const imgTag = document.createElement("img");
-        setAttributes(imgTag, { src: "./assets/-e-kz-few.svg", alt: "" });
-
-        tags.append(imgTag, "Only a few left");
-        item.append(img, name, price, tags);
-
-        fragment.append(item);
+        fragment.append(generateProduct());
       }
 
       allProducts.append(fragment);
