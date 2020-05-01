@@ -17,7 +17,7 @@ const setup = () => {
   scrollBtn.addEventListener("click", scrollToTop);
   productsBtn.addEventListener("click", () => viewMoreProducts(allProducts));
   window.addEventListener("scroll", () => {
-    requestAnimationFrame(showScrollBtn(scrollBtn));
+    requestAnimationFrame(() => showScrollBtn(scrollBtn));
   });
 };
 
