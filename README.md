@@ -10,16 +10,10 @@ Front-end Level Up - Spring 2020.
 - Bootstrap v4
 - JavaScript (ES6+) 
 
-## Run via Webpack Dev Server
+## Run locally
 
 ```
-$ npm run start
-```
-
-## Build from source
-
-```
-$ npm run build
+$ node index.js
 ```
 
 ## License
