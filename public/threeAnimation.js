@@ -1,9 +1,9 @@
 import {visibleHeightAtZDepth, visibleWidthAtZDepth, lerp} from "../utils.js"
-import {nextSlide} from "../main.js"
+import {nextSlide, prevSlide} from "../main.js"
 
 const raycaster = new THREE.Raycaster()
 const objLoader = new THREE.OBJLoader()
-let arrowBox = null
+let arrowBox = []
 let arrowBoxRotation = 0
 
 const scene = new THREE.Scene()
@@ -21,17 +21,19 @@ objLoader.load(
       const screenBorderRight = visibleWidthAtZDepth(-10, camera) / 2
       const screenBottom = -visibleHeightAtZDepth(-10, camera) / 2
 
+      const rotation = [THREE.Math.degToRad(90), THREE.Math.degToRad(180), 0]
+      addCube(children[0], prevSlide, screenBorderRight - 2.5, screenBottom + 1, rotation)
       addCube(children[0], nextSlide, screenBorderRight - 1.5, screenBottom + 1)
 
       animate()
     }
 )
 
-const addCube = (object, callbackFn, x, y) => {
+const addCube = (object, callbackFn, x, y, rotation = [THREE.Math.degToRad(90), 0, 0]) => {
   const cubeMesh = object.clone()
 
   cubeMesh.scale.setScalar(.3)
-  cubeMesh.rotation.set(THREE.Math.degToRad(90), 0, 0)
+  cubeMesh.rotation.set(...rotation)
 
   const boundingBox = new THREE.Mesh(
       new THREE.BoxGeometry(.7, .7, .7),
@@ -46,13 +48,15 @@ const addCube = (object, callbackFn, x, y) => {
 
   boundingBox.callbackFn = callbackFn
 
-  arrowBox = boundingBox
+  arrowBox.push(boundingBox)
   scene.add(boundingBox)
 }
 
 const animate = () => {
   arrowBoxRotation = lerp(arrowBoxRotation, 0, .07)
-  arrowBox.rotation.set(THREE.Math.degToRad(arrowBoxRotation), 0, 0)
+  arrowBox.forEach(elem => {
+    elem.rotation.set(THREE.Math.degToRad(arrowBoxRotation), 0, 0)
+  })
 
   renderer.render(scene, camera)
   requestAnimationFrame(animate)
@@ -69,6 +73,6 @@ window.addEventListener('click', () => {
 
   raycaster.setFromCamera(mousePosition, camera)
 
-  const interesctedObjects = raycaster.intersectObjects([arrowBox])
+  const interesctedObjects = raycaster.intersectObjects(arrowBox)
   interesctedObjects.length && interesctedObjects[0].object.callbackFn()
 })
