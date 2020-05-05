@@ -1,14 +1,14 @@
 # Front-end Level Up
 ### Daftacademy - Spring 2020
-This project has been created as a part of course Daftacademy 
-Front-end Level Up - Spring 2020.
+This is a Homework 4 related to WebGL and canvas.
+
+You can find the current version of main project for this course at branch 
+[homework-3](https://github.com/jayjamesjay/frontend-levelup/tree/homework-3).
 
 ## Technologies 
-- Webpack
 - NPM
-- SCSS with BEM
-- Bootstrap v4
 - JavaScript (ES6+) 
+- three.js
 
 ## Run locally
 
