@@ -5,7 +5,7 @@ const scrollToTop = () =>
     behavior: "smooth",
   });
 
-const showScrollBtn = scrollBtn => {
+const showScrollBtn = (scrollBtn) => {
   const { scrollY, innerHeight } = window;
   const { classList } = scrollBtn;
 
@@ -21,7 +21,7 @@ const currentYear = () => {
   return currDate.getFullYear();
 };
 
-const updateDate = date => {
+const updateDate = (date) => {
   const year = currentYear();
   date.textContent = year;
 };
@@ -63,7 +63,7 @@ const generateProduct = () => {
   return item;
 };
 
-const viewMoreProducts = products => {
+const viewMoreProducts = (products) => {
   const fragment = document.createDocumentFragment();
 
   for (let i = 0; i < 4; i++) {
@@ -72,5 +72,36 @@ const viewMoreProducts = products => {
 
   products.append(fragment);
 };
+
+export class Slider {
+  constructor(id, content) {
+    this.id = id;
+    this.content = content;
+  }
+
+  get itemWidth() {
+    const item = document.querySelector(`#${this.id} .slider-item`);
+    return item.clientWidth;
+  }
+
+  scrollSlide(val) {
+    const { content } = this;
+
+    content.scrollTo({
+      left: content.scrollLeft + val,
+      behavior: "smooth",
+    });
+  }
+
+  prevSlide() {
+    const { itemWidth } = this;
+    this.scrollSlide(-itemWidth);
+  }
+
+  nextSlide() {
+    const { itemWidth } = this;
+    this.scrollSlide(+itemWidth);
+  }
+}
 
 export { scrollToTop, showScrollBtn, updateDate, viewMoreProducts };
