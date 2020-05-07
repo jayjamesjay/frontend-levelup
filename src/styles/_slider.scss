@@ -9,12 +9,13 @@
     display: flex;
     flex-flow: row nowrap;
     overflow: hidden;
+    scroll-behavior: smooth;
     max-width: 1330px;
     justify-content: flex-start;
   }
 
   &-item {
-    margin: 0 15px;
+    margin: 0 15px 25px 15px;
     position: relative;
 
     &__info {

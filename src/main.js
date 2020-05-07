@@ -74,21 +74,32 @@ const viewMoreProducts = (products) => {
 };
 
 export class Slider {
-  constructor(id, content) {
-    this.id = id;
-    this.content = content;
+  constructor(
+    id,
+    contentSelector = ".slider__content",
+    itemSelector = ".slider-item"
+  ) {
+    this.slider = document.getElementById(id);
+    this.content = document.querySelector(`#${id} ${contentSelector}`);
+    this.item = document.querySelector(`#${id} ${itemSelector}`);
   }
 
   get itemWidth() {
-    const item = document.querySelector(`#${this.id} .slider-item`);
-    return item.clientWidth;
+    return this.item.clientWidth;
+  }
+
+  get inner() {
+    return this.slider;
   }
 
   scrollSlide(val) {
     const { content } = this;
+    const { scrollLeft, clientWidth, scrollWidth } = content;
+
+    const left = scrollLeft + 10 >= scrollWidth - clientWidth ? 0 : scrollLeft + val;
 
     content.scrollTo({
-      left: content.scrollLeft + val,
+      left,
       behavior: "smooth",
     });
   }
