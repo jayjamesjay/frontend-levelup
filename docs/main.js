@@ -36,5 +36,5 @@ export const prevSlide = () => {
 
   handleCSSAnimation()
   handleCanvasAnimation(slideIndex)
-  handleThreeAnimation()
+  handleThreeAnimation(0, -360)
 }

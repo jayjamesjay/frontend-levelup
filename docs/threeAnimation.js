@@ -4,7 +4,7 @@ import {nextSlide, prevSlide} from "./main.js"
 const raycaster = new THREE.Raycaster()
 const objLoader = new THREE.OBJLoader()
 let arrowBox = []
-let arrowBoxRotation = 0
+let arrowBoxRotation = [0, 0]
 
 const scene = new THREE.Scene()
 const camera = new THREE.PerspectiveCamera(30, window.innerWidth / window.innerHeight)
@@ -25,6 +25,7 @@ objLoader.load(
       addCube(children[0], prevSlide, screenBorderRight - 2.5, screenBottom + 1, rotation)
       addCube(children[0], nextSlide, screenBorderRight - 1.5, screenBottom + 1)
 
+      animate(0)
       animate()
     }
 )
@@ -52,18 +53,16 @@ const addCube = (object, callbackFn, x, y, rotation = [THREE.Math.degToRad(90), 
   scene.add(boundingBox)
 }
 
-const animate = () => {
-  arrowBoxRotation = lerp(arrowBoxRotation, 0, .07)
-  arrowBox.forEach(elem => {
-    elem.rotation.set(THREE.Math.degToRad(arrowBoxRotation), 0, 0)
-  })
-
+const animate = (idx = 1) => {
+  arrowBoxRotation[idx] = lerp(arrowBoxRotation[idx], 0, .07)
+  arrowBox[idx].rotation.set(THREE.Math.degToRad(arrowBoxRotation[idx]), 0, 0)
+  
   renderer.render(scene, camera)
-  requestAnimationFrame(animate)
+  requestAnimationFrame(() => animate(idx))
 }
 
-export const handleThreeAnimation = () => {
-  arrowBoxRotation = 360
+export const handleThreeAnimation = (idx = 1, deg = 360) => {
+  arrowBoxRotation[idx] = deg
 }
 
 window.addEventListener('click', () => {
