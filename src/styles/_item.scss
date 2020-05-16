@@ -17,6 +17,10 @@
 
   &__img {
     @extend %w-100-h;
+    background: $font-color-2;
+    background: linear-gradient(50deg, $border-color-2 0%, $border-color-2 50%, $border-color 50%, $border-color 100%);
+    height: 390px;
+    object-fit: cover;
     order: 1;
   }
 
