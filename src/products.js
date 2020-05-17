@@ -116,6 +116,10 @@ class ProductList {
     return new ProductList(...list);
   }
 
+  by_idx(idx) {
+    return idx < this.inner.length && this.inner[idx];
+  }
+
   reverse() {
     this.inner = [...this.inner].reverse();
   }
@@ -133,7 +137,7 @@ class ProductList {
 
 const fetchJSON = (url) => fetch(url).then((res) => res.json());
 
-const updateProducts = (data, container) => {
+const updateNewProducts = (data, container) => {
   const products = ProductList.fromApiRes(data);
   const productsHtml = products.asHtml(standardProductHtml);
   container.append(productsHtml);
@@ -142,14 +146,61 @@ const updateProducts = (data, container) => {
   return products;
 };
 
-const fetchProducts = (url, container) =>
-  fetchJSON(url).then((data) => updateProducts(data, container));
+const updateSliderProducts = (products, slider) => {
+  products.reverse();
+  const sliderItems = products.asHtml(sliderProductHtml);
+  slider.append(sliderItems);
 
-const loadProducts = (url, container, slider) =>
-  fetchProducts(url, container).then((products) => {
-    products.reverse();
-    const sliderItems = products.asHtml(sliderProductHtml);
-    slider.append(sliderItems);
+  return products;
+};
+
+const updateGridProducts = (products, grid) => {
+  let idx = 2;
+
+  for (const item in grid) {
+    const name = document.querySelector(`${grid[item]} .grid-item__name`);
+    const img = document.querySelector(`${grid[item]} .grid-item__img`);
+
+    const currProduct = products.by_idx(idx);
+
+    name.textContent = currProduct.name;
+    img.src = generateImgUrl(currProduct.id);
+
+    idx += 1;
+  }
+
+  return products;
+};
+
+const removeLoaders = (loaders) => {
+  loaders.forEach((elem) => {
+    elem.remove();
   });
+};
+
+const handleLoadingError = (loaders, ...containers) => {
+  removeLoaders(loaders);
+
+  for (let item of containers) {
+    const alert = document.createElement('div');
+    alert.setAttribute('class', 'section__alert')
+    alert.textContent = "Failed to load items";
+
+    item.append(alert);
+  }
+};
+
+const fetchProducts = (url, container) =>
+  fetchJSON(url).then((data) => updateNewProducts(data, container));
+
+const loadProducts = ({ url, container, slider, grid, loaders }) =>
+  fetchJSON(url)
+    .then((data) => {
+      removeLoaders(loaders);
+      return updateNewProducts(data, container);
+    })
+    .then((products) => updateGridProducts(products, grid))
+    .then((products) => updateSliderProducts(products, slider))
+    .catch((_) => handleLoadingError(loaders, container, slider, grid));
 
 export { generateUrl, fetchProducts, loadProducts };

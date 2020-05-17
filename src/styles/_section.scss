@@ -16,6 +16,21 @@
     }
   }
 
+  &__content {
+    justify-content: center;
+  }
+
+  &__alert {
+    width: 6rem;
+    min-height: 3rem;
+    padding: 1rem;
+    background: $border-color-2;
+    font-size: $font-size-2;
+    color: $bg-color-3;
+    text-align: center;
+    flex: 1 1 20%;
+  }
+
   &__overlay {
     width: 100%;
     min-height: 63vh;

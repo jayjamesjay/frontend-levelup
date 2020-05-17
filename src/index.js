@@ -11,37 +11,26 @@ const setup = () => {
   const sliderProducts = document.getElementById("slider-products");
   const slider = new Slider("slider");
 
-  const gridMain = document.querySelector(
-    ".section--campaigns .grid-item--main"
-  );
-  const gridSquare = document.querySelector(
-    ".section--campaigns .grid-item--square"
-  );
-  const gridSquare2 = document.querySelector(
-    ".section--campaigns .grid-item--square-2"
-  );
-  const gridWide = document.querySelector(
-    ".section--campaigns .grid-item--wide"
-  );
   const grid = {
-    main: gridMain,
-    square: gridSquare,
-    square2: gridSquare2,
-    wide: gridWide,
+    main: ".section--campaigns .grid-item--main",
+    square: ".section--campaigns .grid-item--square",
+    square2: ".section--campaigns .grid-item--wide",
+    wide: ".section--campaigns .grid-item--square-2",
   };
+  const loaders = document.querySelectorAll(".loader")
 
   const url = generateUrl();
 
-  loadProducts(url, allProducts, sliderProducts, grid);
+  loadProducts({url, container: allProducts, slider: sliderProducts, grid, loaders});
   updateDate(date);
 
+  window.addEventListener("scroll", () => {
+    requestAnimationFrame(() => showScrollBtn(scrollBtn));
+  });
   scrollBtn.addEventListener("click", scrollToTop);
   productsBtn.addEventListener("click", () => {
     const url = generateUrl();
     fetchProducts(url, allProducts);
-  });
-  window.addEventListener("scroll", () => {
-    requestAnimationFrame(() => showScrollBtn(scrollBtn));
   });
   slider.inner.addEventListener("click", (event) => {
     const { target } = event;

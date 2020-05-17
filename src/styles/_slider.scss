@@ -23,7 +23,13 @@
       height: 338px;
       object-fit: cover;
       background: $font-color-2;
-      background: linear-gradient(140deg, $border-color-2 0%, $border-color-2 50%, $border-color 50%, $border-color 100%);
+      background: linear-gradient(
+        140deg,
+        $border-color-2 0%,
+        $border-color-2 50%,
+        $border-color 50%,
+        $border-color 100%
+      );
     }
 
     &__info {

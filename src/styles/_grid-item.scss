@@ -3,14 +3,28 @@
   height: auto;
   position: relative;
   margin: 10px 0;
+  color: $bg-color-3;
 
   &__img {
     @extend %w-100-h;
-  }
-
-  &__img--wide {
-    min-height: 15.3rem;
+    height: 310px;
     object-fit: cover;
+    object-position: center top;
+    background: linear-gradient(
+      50deg,
+      $border-color-2 0%,
+      $border-color-2 50%,
+      $border-color 50%,
+      $border-color 100%
+    );
+
+    &--main {
+      height: 630px;
+    }
+
+    &--wide {
+      object-position: center 30%;
+    }
   }
 
   &__info {
@@ -25,7 +39,7 @@
   }
 
   &__link {
-    color: $font-color;
+    color: $bg-color-3;
     font-size: $font-size-1;
     font-weight: 600;
 
