@@ -3,7 +3,7 @@
 This is a Homework 4 related to WebGL and canvas.
 
 You can find the current version of main project for this course at branch 
-[homework-3](https://github.com/jayjamesjay/frontend-levelup/tree/homework-3).
+[master](https://github.com/jayjamesjay/frontend-levelup/tree/master).
 
 ## Technologies 
 - NPM
