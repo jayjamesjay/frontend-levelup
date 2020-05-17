@@ -222,12 +222,12 @@ const loadProducts = ({
     })
     .then((products) => updateGridProducts(products, grid))
     .then((products) => updateSliderProducts(products, slider))
-    .catch((_) =>
+    .catch((_) => {
       handleLoadingError(
         [...loaders, ...gridItems, fetchBtn],
         [newProducts, slider, gridContainer]
-      )
-    );
+      );
+    });
 };
 
 export { generateUrl, fetchProducts, loadProducts };
