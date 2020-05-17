@@ -1,0 +1,10 @@
+.controls {
+  @extend %flex-row;
+  align-items: center;
+
+  @media screen and (min-width: $breakpoint-1) {
+    &--alt {
+      margin-right: 11rem;
+    }
+  }
+}

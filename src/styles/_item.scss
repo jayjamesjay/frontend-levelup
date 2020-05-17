@@ -1,0 +1,43 @@
+.item {
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 1rem 0.5rem;
+  font-size: $font-size-1;
+
+  &__name,
+  &__price,
+  &__tags {
+    margin: 0.2rem 0;
+  }
+
+  &__name {
+    order: 3;
+    font-size: $font-size-1;
+  }
+
+  &__img {
+    @extend %w-100-h;
+    background: $font-color-2;
+    background: linear-gradient(50deg, $border-color-2 0%, $border-color-2 50%, $border-color 50%, $border-color 100%);
+    height: 390px;
+    object-fit: cover;
+    order: 1;
+  }
+
+  &__price {
+    order: 4;
+    font-weight: bold;
+  }
+
+  &__discount {
+    color: $font-color-2;
+    text-decoration: line-through;
+  }
+
+  &__tags {
+    margin-top: 0.5rem;
+    order: 2;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+}

@@ -1,0 +1,21 @@
+.header {
+  font-size: $font-size-4;
+  font-weight: 600;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background: rgba($bg-color-3, 0.4);
+
+  &__content {
+    @extend %flex-row;
+    padding: 0 10px;
+
+    @media screen and (min-width: $breakpoint-1) {
+      align-items: center;
+      max-width: 1330px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
