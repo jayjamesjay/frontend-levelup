@@ -13,7 +13,7 @@ const setAttributes = (element, attributeList) => {
 };
 
 const generateImgUrl = (isbn) =>
-  `http://covers.openlibrary.org/b/isbn/${isbn}-L.jpg`;
+  `https://covers.openlibrary.org/b/isbn/${isbn}-L.jpg`;
 
 const standardProductHtml = (product) => {
   const { name, price, author, imgUrl } = product;
