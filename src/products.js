@@ -2,8 +2,8 @@ import starIcon from "./assets/-e-kz-star-line.svg";
 
 const endpoint =
   "https://api.nytimes.com/svc/books/v3/lists/best-sellers/history.json";
-const key = "key";
-let productsOffset = 0;
+const key = "DEV-KEY";
+let productsOffset = 80;
 const generateUrl = () => `${endpoint}?api-key=${key}&offset=${productsOffset}`;
 
 const setAttributes = (element, attributeList) => {
@@ -178,29 +178,56 @@ const removeLoaders = (loaders) => {
   });
 };
 
-const handleLoadingError = (loaders, ...containers) => {
+const handleLoadingError = (loaders, containers) => {
   removeLoaders(loaders);
 
   for (let item of containers) {
-    const alert = document.createElement('div');
-    alert.setAttribute('class', 'section__alert')
-    alert.textContent = "Failed to load items";
+    const alert = document.createElement("div");
+    alert.setAttribute("class", "section__alert");
+    alert.textContent = "Failed to load the items. Please refresh the page.";
 
     item.append(alert);
   }
 };
 
-const fetchProducts = (url, container) =>
-  fetchJSON(url).then((data) => updateNewProducts(data, container));
+const fetchProducts = (btn, url, container) => {
+  btn.textContent = "...Loading products...";
 
-const loadProducts = ({ url, container, slider, grid, loaders }) =>
-  fetchJSON(url)
+  return fetchJSON(url)
+    .then((data) => {
+      btn.textContent = "View all products";
+      return updateNewProducts(data, container);
+    })
+    .catch((_) => handleLoadingError([], container));
+};
+
+const loadProducts = ({
+  url,
+  newProducts,
+  slider,
+  grid,
+  gridContainer,
+  loaders,
+  fetchBtn,
+}) => {
+  const gridItems = Object.entries(grid).map((elem) => {
+    const [_, val] = elem;
+    return document.querySelector(val);
+  });
+
+  return fetchJSON(url)
     .then((data) => {
       removeLoaders(loaders);
-      return updateNewProducts(data, container);
+      return updateNewProducts(data, newProducts);
     })
     .then((products) => updateGridProducts(products, grid))
     .then((products) => updateSliderProducts(products, slider))
-    .catch((_) => handleLoadingError(loaders, container, slider, grid));
+    .catch((_) =>
+      handleLoadingError(
+        [...loaders, ...gridItems, fetchBtn],
+        [newProducts, slider, gridContainer]
+      )
+    );
+};
 
 export { generateUrl, fetchProducts, loadProducts };

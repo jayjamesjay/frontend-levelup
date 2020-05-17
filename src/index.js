@@ -9,6 +9,7 @@ const setup = () => {
   const productsBtn = document.getElementById("products-btn");
   const allProducts = document.getElementById("all-products");
   const sliderProducts = document.getElementById("slider-products");
+  const gridContainer = document.querySelector(".section--campaigns");
   const slider = new Slider("slider");
 
   const grid = {
@@ -17,11 +18,19 @@ const setup = () => {
     square2: ".section--campaigns .grid-item--wide",
     wide: ".section--campaigns .grid-item--square-2",
   };
-  const loaders = document.querySelectorAll(".loader")
+  const loaders = document.querySelectorAll(".loader");
 
   const url = generateUrl();
 
-  loadProducts({url, container: allProducts, slider: sliderProducts, grid, loaders});
+  loadProducts({
+    url,
+    newProducts: allProducts,
+    slider: sliderProducts,
+    grid,
+    gridContainer,
+    loaders,
+    fetchBtn: productsBtn
+  });
   updateDate(date);
 
   window.addEventListener("scroll", () => {
@@ -30,7 +39,7 @@ const setup = () => {
   scrollBtn.addEventListener("click", scrollToTop);
   productsBtn.addEventListener("click", () => {
     const url = generateUrl();
-    fetchProducts(url, allProducts);
+    fetchProducts(productsBtn, url, allProducts);
   });
   slider.inner.addEventListener("click", (event) => {
     const { target } = event;
